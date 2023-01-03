@@ -130,6 +130,7 @@ nav h1{
 
 .key:hover{
     background-color: var(--grey);
+    color: #414458;
 }
 
 @media screen and (max-width:500px){
