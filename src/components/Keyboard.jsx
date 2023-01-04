@@ -1,5 +1,6 @@
 import React from 'react'
 import Key from './Key'
+import { FiDelete } from 'react-icons/fi'
 
 const Keyboard = () => {
   const keys1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P']
@@ -23,7 +24,7 @@ const Keyboard = () => {
         {keys3.map((key) => {
           return <Key keyVal={key}/>
         })}
-        <Key keyVal={'DELETE'} bigKey={true} />
+        <Key keyVal={<FiDelete className='delete-icon'/>} bigKey={true} />
       </div>
     </div>
   )
