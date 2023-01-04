@@ -133,6 +133,10 @@ nav h1{
     color: #414458;
 }
 
+#big{
+    width: 100px;
+}
+
 @media screen and (max-width:500px){
 
     .keyboard {
