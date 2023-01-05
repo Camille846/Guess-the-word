@@ -1,8 +1,8 @@
 :root{
     --body-bg-color: #121212;
     --body-text-color: #fff;
-    --correct-color: #528d4e;
-    --almost-color: #b49f39;
+    --correct-color:#538d4e;
+    --almost-color: #b59f3b;
     --error: #3a393c;
     --grey: #ccc;
     --key-bg-color: #818384;
@@ -140,6 +140,18 @@ nav h1{
 .delete-icon{
     font-size: 1.3rem;
     cursor: pointer;
+}
+
+#correct{
+    background-color: var(--correct-color);
+}	
+
+#almost{
+    background-color: var(--almost-color);
+}
+
+#error{
+    background-color: var(--error);
 }
 
 
