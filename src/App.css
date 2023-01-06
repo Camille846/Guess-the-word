@@ -158,6 +158,10 @@ nav h1{
     background-color: #3a393c;
 }
 
+#disabled:hover{
+    color: #fff;
+}
+
 @media screen and (max-width:500px){
 
     .keyboard {
