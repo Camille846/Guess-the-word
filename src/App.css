@@ -154,6 +154,9 @@ nav h1{
     background-color: var(--error);
 }
 
+#disabled {
+    background-color: #3a393c;
+}
 
 @media screen and (max-width:500px){
 

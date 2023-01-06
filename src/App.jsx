@@ -11,6 +11,7 @@ function App() {
   const [board, setBoard] = useState(boardDefault)
   const [currentAttempt, setCurrentAttempt] = useState({attempt: 0, letterPosition: 0})
   const [wordSet, setWordSet] = useState(new Set())
+  const [disabledLetters, setDisabledLetters] = useState([])
 
   const correctWord = 'RIGHT'
 
@@ -31,12 +32,14 @@ function App() {
   
   const onSelectedEnter = () => {
     if(currentAttempt.letterPosition !== 5) return
+
     let currentWord = ''
     for (let i = 0; i < 5; i++) {
       currentWord += board[currentAttempt.attempt][i]
     }
+
     if(wordSet.has(currentWord.toLowerCase())) { 
-      setCurrentAttempt({...currentAttempt, attempt: currentAttempt.attempt + 1, letterPosition: 0})
+      setCurrentAttempt({attempt: currentAttempt.attempt + 1, letterPosition: 0})
     } else {
       alert('This word is not in the dictionary!')
     }
@@ -69,6 +72,8 @@ function App() {
           onSelectedEnter, 
           onSelectedDelete,
           correctWord,
+          disabledLetters,
+          setDisabledLetters
         }}
       >
         <Board />
