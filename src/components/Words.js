@@ -18,4 +18,4 @@ export const generateWordSet = async () => {
             wordSet = new Set(wordArray);
         });
     return {wordSet};
-};
+}; 
