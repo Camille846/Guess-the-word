@@ -10,6 +10,8 @@ function App() {
   const [board, setBoard] = useState(boardDefault)
   const [currentAttempt, setCurrentAttempt] = useState({attempt: 0, letterPosition: 0})
 
+  const correctWord = 'RIGHT'
+
   const onSelectedLetter = (keyVal) => {
     if(currentAttempt.letterPosition >= board[currentAttempt.attempt].length) return
   
@@ -38,7 +40,16 @@ function App() {
         <h1>Guess the word!</h1>
       </nav>
       <AppContext.Provider 
-        value={{ board, setBoard, currentAttempt, setCurrentAttempt, onSelectedLetter, onSelectedEnter, onSelectedDelete }}
+        value={{ 
+          board, 
+          setBoard, 
+          currentAttempt, 
+          setCurrentAttempt, 
+          onSelectedLetter, 
+          onSelectedEnter, 
+          onSelectedDelete,
+          correctWord,
+        }}
       >
         <Board />
         <Keyboard />

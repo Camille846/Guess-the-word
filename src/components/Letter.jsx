@@ -2,10 +2,15 @@ import React, { useContext } from 'react'
 import { AppContext } from '../App'
 
 const Letter = ({letterPos, attemptVal}) => {
-    const { board } = useContext(AppContext)
+    const { board, correctWord, currentAttempt } = useContext(AppContext)
     const letter = board[attemptVal][letterPos]
+    const correct = correctWord[letterPos] === letter
+    const almost = !correct && letter !== ' ' && correctWord.includes(letter)
+    // we just want to set the colors after the user has made an attempt
+    const letterState = currentAttempt.attempt > attemptVal && (correct ? 'correct' : almost ? 'almost' : 'error')
+
     return (
-        <div className='letter'>{letter}</div>
+        <div className='letter' id={letterState}>{letter}</div>
     )
 }
 
